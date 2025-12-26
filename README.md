@@ -19,6 +19,7 @@ OpenCV library via the Bytedeco wrapper and uses the SFace (Face Recognition) mo
 
 - **JDK:** Java 25
 - **Operating System:** Compatible with OpenCV (Windows, macOS, Linux)
+- **Model:** SFace (Face Recognition): https://huggingface.co/opencv/face_recognition_sface/blob/main/face_recognition_sface_2021dec.onnx
 
 ## Setup and Run
 
