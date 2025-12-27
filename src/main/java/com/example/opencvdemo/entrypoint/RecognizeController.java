@@ -32,9 +32,8 @@ public class RecognizeController {
         try {
             Mat target = loadFromBytesInMemory(targetImage.getBytes(), targetImage.getOriginalFilename());
             Mat query = loadFromBytesInMemory(queryImage.getBytes(), queryImage.getOriginalFilename());
-            Mat queryFeatures = service.extractFeatures(query, query);
-            Mat targetFeatures = service.extractFeatures(target, target);
-            return ResponseEntity.ok(service.matchFeatures(targetFeatures, queryFeatures));
+            MatchResult res = service.matchFeatures(target, query);
+            return ResponseEntity.ok(res);
         } catch (IOException e) {
             return ResponseEntity.badRequest().body(new MatchResult(-1, false));
         }

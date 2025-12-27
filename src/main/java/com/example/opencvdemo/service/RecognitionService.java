@@ -31,7 +31,7 @@ public class RecognitionService {
                     Dnn.DNN_TARGET_CPU
             );
 
-    public Mat extractFeatures(Mat origImage, Mat faceImage) {
+   private Mat extractFeatures(Mat origImage, Mat faceImage) {
         Mat targetAligned = new Mat();
         recognizer.alignCrop(origImage, faceImage, targetAligned);
         Mat targetFeatures = new Mat();
@@ -39,7 +39,9 @@ public class RecognitionService {
         return targetFeatures.clone();
     }
 
-    public MatchResult matchFeatures(Mat targetFeatures, Mat queryFeatures) {
+    public MatchResult matchFeatures(Mat target, Mat query) {
+        Mat queryFeatures = this.extractFeatures(query, query);
+        Mat targetFeatures = this.extractFeatures(target, target);
         int distanceType = 0;
         double THRESHOLD_COSINE = 0.36;
         double score = recognizer.match(targetFeatures, queryFeatures, distanceType);
