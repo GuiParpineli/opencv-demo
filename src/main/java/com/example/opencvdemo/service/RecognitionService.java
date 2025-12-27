@@ -23,9 +23,13 @@ public class RecognitionService {
         Loader.load(opencv_java.class);
     }
 
-    private final FaceRecognizerSF recognizer = FaceRecognizerSF.create(
-            sFaceModel, "", Dnn.DNN_BACKEND_OPENCV, Dnn.DNN_TARGET_CPU
-    );
+    private final FaceRecognizerSF recognizer = FaceRecognizerSF
+            .create(
+                    sFaceModel,
+                    "",
+                    Dnn.DNN_BACKEND_OPENCV,
+                    Dnn.DNN_TARGET_CPU
+            );
 
     public Mat extractFeatures(Mat origImage, Mat faceImage) {
         Mat targetAligned = new Mat();
