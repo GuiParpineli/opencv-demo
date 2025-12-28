@@ -25,7 +25,7 @@ OpenCV library via the Bytedeco wrapper and uses the SFace (Face Recognition) mo
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/GuiParpineli/opencv-demo/
    cd opencv-demo
    ```
 
