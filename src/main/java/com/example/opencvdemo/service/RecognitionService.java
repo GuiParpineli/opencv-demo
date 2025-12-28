@@ -86,7 +86,7 @@ public class RecognitionService {
             try {
                 return resource.getFile().getAbsolutePath();
             } catch (IOException e) {
-                Path tempFile = Files.createTempFile("cvcore_", "_face_recognition.onnx");
+                Path tempFile = Files.createTempFile("core_", "_face_recognition.onnx");
                 tempFile.toFile().deleteOnExit();
                 try (InputStream in = resource.getInputStream()) {
                     Files.copy(in, tempFile, StandardCopyOption.REPLACE_EXISTING);
