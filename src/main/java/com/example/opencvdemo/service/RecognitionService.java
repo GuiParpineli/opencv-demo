@@ -5,7 +5,6 @@ import org.bytedeco.opencv.opencv_java;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.dnn.Dnn;
-import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.FaceDetectorYN;
 import org.opencv.objdetect.FaceRecognizerSF;
 import org.springframework.core.io.ClassPathResource;
